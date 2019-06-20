@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="mat-h1">Agenda Telefonica</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="col-sm-12">
+      <mat-form-field class="full-width">
+        <input formControlName="FirstName" matInput placeholder="Nombre">
+      </mat-form-field>
+      <mat-error>
+        <span *ngIf="!form.get('FirstName').valid && form.get('FirstName').touched">Nombre es requerido</span>
+      </mat-error>
+    </div>
+    <div class="col-sm-12">
+      <mat-form-field class="full-width">
+        <input formControlName="LastName" matInput placeholder="Apellidos">
+      </mat-form-field>
+      <mat-error>
+        <span *ngIf="!form.get('LastName').valid && form.get('LastName').touched">Apellidos es requerido</span>
+      </mat-error>
+    </div>
+    <div class="col-sm-12">
+      <mat-form-field class="full-width">
+        <input formControlName="Phone" matInput placeholder="Telefono">
+      </mat-form-field>
+      <mat-error>
+        <span *ngIf="!form.get('Phone').valid && form.get('Phone').touched">Telefono es requerido</span>
+      </mat-error>
+    </div>
+
+    <div class="col-sm-12">
+      <mat-form-field class="full-width">
+        <input formControlName="Email" matInput placeholder="Email">
+        <mat-hint>algo como : demo@demo.com</mat-hint>
+        <mat-error>
+          <span *ngIf="!form.get('Email').valid && form.get('Email').touched">Agrega un correo valido</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12">
+      <button mat-raised-button color="accent" [disabled]="!form.valid">{{ data.title }}</button>
+    </div>
+
+  </form>
+</div>
